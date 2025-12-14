@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My To-Do List</h1>
+        </header>
+        
+        <main>
+            <!-- Add Task Section -->
+            <section class="add-task-section">
+                <h2>Add New Task</h2>
+                <form id="taskForm">
+                    <div class="input-group">
+                        <input type="text" id="taskInput" placeholder="Enter a new task..." required>
+                        <button type="submit" class="add-btn">Add Task</button>
+                    </div>
+                </form>
+            </section>
+            
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <h3>Total Tasks</h3>
+                    <p id="totalTasks">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Tasks</h3>
+                    <p id="pendingTasks">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Completed Tasks</h3>
+                    <p id="completedTasks">0</p>
+                </div>
+            </section>
+            
+            <!-- Tasks Sections -->
+            <section class="tasks-section">
+                <div class="section-tabs">
+                    <button class="tab-btn active" data-tab="all">All Tasks</button>
+                    <button class="tab-btn" data-tab="pending">Pending Tasks</button>
+                    <button class="tab-btn" data-tab="completed">Completed Tasks</button>
+                </div>
+                
+                <div class="tasks-container">
+                    <!-- All Tasks List -->
+                    <div class="task-list active" id="allTasksList">
+                        <h2>All Tasks</h2>
+                        <div id="allTasksContainer"></div>
+                    </div>
+                    
+                    <!-- Pending Tasks List -->
+                    <div class="task-list" id="pendingTasksList">
+                        <h2>Pending Tasks</h2>
+                        <div id="pendingTasksContainer"></div>
+                    </div>
+                    
+                    <!-- Completed Tasks List -->
+                    <div class="task-list" id="completedTasksList">
+                        <h2>Completed Tasks</h2>
+                        <div id="completedTasksContainer"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Edit Task Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="editForm">
+                <input type="hidden" id="editTaskId">
+                <div class="input-group">
+                    <input type="text" id="editTaskInput" placeholder="Edit task..." required>
+                </div>
+                <button type="submit" class="save-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
